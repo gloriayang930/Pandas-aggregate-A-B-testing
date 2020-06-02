@@ -15,6 +15,7 @@ clicks_pivot = clicks_by_source.pivot(
   values = 'user_id'
 ).reset_index()
 
+#percentage = True / (True + False)
 clicks_pivot['percent_clicked'] = \
    clicks_pivot[True] / \
    (clicks_pivot[True] + 
@@ -37,7 +38,7 @@ a_clicks_pivot = a_clicks\
     columns = 'is_click',
     index = 'day',
     values = 'user_id'
-  ).reset_index()
+  ).reset_index()  #pivot可以直接跟在前一个后面写；转换成pivot table后再计算percentage
 
 a_clicks_pivot['percent_click'] = a_clicks_pivot[True] / (a_clicks_pivot[True] + a_clicks_pivot[False])
 print(a_clicks_pivot)
